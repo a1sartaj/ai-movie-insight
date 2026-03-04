@@ -38,7 +38,23 @@ export default function Home() {
 
       const reviewData = await reviewRes.json()
       if (!reviewData.results.length) {
-        setSentiment("No audience reviews available.")
+        const fallbackRes = await fetch("/api/sentiment", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            reviews: [
+              {
+                content: `Movie Plot: ${movie.Plot}. IMDb rating: ${movie.imdbRating}`
+              }
+            ]
+          })
+        })
+
+        const fallbackData = await fallbackRes.json()
+
+        setSentiment(fallbackData.result)
         setShowReviews(true)
         return
       }
