@@ -29,15 +29,6 @@ The application fetches movie data, stores recent searches locally, and provides
 ## Deployment
 - Vercel (recommended for Next.js apps)
 
-## Tech Stack Rationale
-
-**Next.js** was chosen because it provides a powerful framework for building modern React applications with built-in routing and optimized performance.
-
-**TypeScript** improves code quality by providing type safety and better developer experience.
-
-**Tailwind CSS** enables rapid UI development with utility-first styling and responsive design.
-
-**OMDb API** provides reliable movie data using IMDb IDs, which aligns with the assignment requirement.
 
 ## Installation and Setup
 
@@ -90,11 +81,6 @@ http://localhost:3000
 4. The searched movie is saved in localStorage.
 5. Recent searches appear as cards for quick access.
 
-## Assumptions
-- IMDb ID is provided directly by the user.
-- OMDb API provides accurate movie data.
-- Search history is stored only in localStorage for simplicity.
-- Maximum of 5 recent searches are stored.
 
 ## Deployment
 ### The application can be deployed easily using Vercel.
