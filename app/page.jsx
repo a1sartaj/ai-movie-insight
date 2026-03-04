@@ -105,7 +105,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="min-h-screen bg-gray-100 flex flex-col items-center p-10">
+    <main className="min-h-screen bg-gray-100 flex flex-col items-center p-2 pt-10">
 
 
       {/* Loading screen */}
@@ -152,14 +152,16 @@ export default function Home() {
 
       {/* Movie Result */}
       {movie && (
-        <div className="bg-white shadow-xl rounded-xl p-6 w-full max-w-3xl flex gap-6 mb-12">
+        <div className="bg-white shadow-xl rounded-xl p-6 w-full max-w-3xl flex flex-col md:flex-row gap-6 mb-12">
 
+          {/* Movie left */}
           <img
             src={movie.Poster}
             alt={movie.Title}
             className="w-40 rounded-lg shadow"
           />
 
+          {/* Movie right */}
           <div className="flex flex-col justify-center">
 
             <h2 className="text-2xl font-bold mb-2">
