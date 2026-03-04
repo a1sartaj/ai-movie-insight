@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Movie Insight
+AI Movie Insight Builder is a full-stack web application that allows users to search for a movie using an IMDb ID and view detailed movie information along with AI-generated audience sentiment insights.
 
-## Getting Started
+The application fetches movie data, stores recent searches locally, and provides a clean, responsive user interface for exploring movie information.
 
-First, run the development server:
+## Features
+- Search movies using IMDb ID
+- Display movie poster, title, year, and IMDb rating
+- Maintain recent search history using localStorage
+- Click a history card to view movie details again
+- Responsive design for desktop and mobile
+- Clean and minimal UI
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Future enhancements can include:
+- Audience reviews fetching
+- AI-generated sentiment summary
+- Sentiment classification (Positive / Mixed / Negative)
+
+
+## Tech Stack
+### Frontend
+- Next.js (React framework)
+- TypeScript
+- Tailwind CSS
+
+## APIs
+- OMDb API for movie data
+
+## Deployment
+- Vercel (recommended for Next.js apps)
+
+## Tech Stack Rationale
+
+**Next.js** was chosen because it provides a powerful framework for building modern React applications with built-in routing and optimized performance.
+
+**TypeScript** improves code quality by providing type safety and better developer experience.
+
+**Tailwind CSS** enables rapid UI development with utility-first styling and responsive design.
+
+**OMDb API** provides reliable movie data using IMDb IDs, which aligns with the assignment requirement.
+
+## Installation and Setup
+
+### Clone the repository:
+```
+git clone https://github.com/yourusername/ai-movie-insight.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Navigate to the project directory:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+cd ai-movie-insight
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Install dependencies:
 
-## Learn More
+```
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Create an environment variable file:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+.env.local
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Add your OMDb API key:
 
-## Deploy on Vercel
+```
+NEXT_PUBLIC_OMDB_API_KEY=your_api_key_here
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Start the development server:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+npm run dev
+```
+
+### Open the application in the browser:
+
+```
+http://localhost:3000
+```
+
+## How It Works
+
+1. User enters an IMDb ID in the search input.
+2. The app fetches movie data from the OMDb API.
+3. Movie details are displayed including poster, title, year, and rating.
+4. The searched movie is saved in localStorage.
+5. Recent searches appear as cards for quick access.
+
+## Assumptions
+- IMDb ID is provided directly by the user.
+- OMDb API provides accurate movie data.
+- Search history is stored only in localStorage for simplicity.
+- Maximum of 5 recent searches are stored.
+
+## Deployment
+### The application can be deployed easily using Vercel.
+Steps:
+- Push the repository to GitHub
+- Import the project into Vercel
+- Add the environment variable:
+
+NEXT_PUBLIC_OMDB_API_KEY
+- Deploy the application
+
+## Author
+
+### Sartaj Alam
+- Full Stack Developer (MERN Stack)
+- Email: sartaj9806@gmail.com
